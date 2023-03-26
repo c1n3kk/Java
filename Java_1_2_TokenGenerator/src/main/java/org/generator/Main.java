@@ -1,4 +1,4 @@
-package org.genrator;
+package org.generator;
 
 import java.util.Scanner;
 
@@ -8,7 +8,7 @@ public class Main {
         System.out.println("I will generate a token from random characters.");
         while (true) {
             System.out.println("\nPlease select the length of the token to generate:");
-            System.out.println("1 - 5 characters, 2 - 10 characters, 3 - 15 characters:");
+            System.out.println("(1 - 5 characters, 2 - 10 characters, 3 - 15 characters)");
             int tokenLength = 5 * getTokenLength();
             if (tokenLength == 0) {
                 continue;
