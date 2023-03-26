@@ -41,9 +41,8 @@ public class Main {
         int randomInt;
         char randomChar;
         int lowerLimit = 33;
-        int upperLimit = 126;
+        int upperLimit = 127;
         StringBuilder token = new StringBuilder();
-
         for (int i = 0; i < tokenLength; i++) {
             randomInt = getRandomIntWithinLimits(lowerLimit, upperLimit);
             randomChar = (char) randomInt;
