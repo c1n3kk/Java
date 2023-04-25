@@ -19,10 +19,10 @@ public class Main {
             }
 
             System.out.println("\nPlease enter a number:");
-            int usrNumber = new Scanner(System.in).nextInt();
+            int userNumber = new Scanner(System.in).nextInt();
             tries--;
 
-            if (usrNumber == numberToGuess)
+            if (userNumber == numberToGuess)
             {
                 System.out.println("BRAVO! You guessed it! My number was indeed " + numberToGuess + ".");
                 gameFinished = true;
@@ -35,7 +35,7 @@ public class Main {
             }
 
             if (!gameFinished) {
-                printHint(tries, usrNumber > numberToGuess ? "high" : "low");
+                printHint(tries, userNumber > numberToGuess ? "high" : "low");
                 continue;
             }
 
