@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("\nWelcome to 'TOKEN GENERATOR' app!");
         System.out.println("I will generate a token from random characters.");
+
         while (true) {
             System.out.println("\nPlease select the length of the token to generate:");
             System.out.println("(1 - 5 characters, 2 - 10 characters, 3 - 15 characters)");
@@ -13,7 +14,7 @@ public class Main {
             if (tokenLength == 0) {
                 continue;
             } else {
-                String token = tokenGenerator(tokenLength);
+                String token = generateToken(tokenLength);
                 System.out.println("Your generated token is:");
                 System.out.println("\n" + token + "\n");
             }
@@ -32,26 +33,26 @@ public class Main {
         if (userInt == 1 || userInt == 2 || userInt == 3) {
             return userInt;
         } else {
-            System.out.println("Please select correct value!");
+            System.out.println("Your value is not valid!");
             return 0;
         }
     }
 
-    public static String tokenGenerator(int tokenLength) {
+    public static String generateToken(int tokenLength) {
         int randomInt;
         char randomChar;
         int lowerLimit = 33;
         int upperLimit = 127;
         StringBuilder token = new StringBuilder();
         for (int i = 0; i < tokenLength; i++) {
-            randomInt = getRandomIntWithinLimits(lowerLimit, upperLimit);
+            randomInt = getRandomInt(lowerLimit, upperLimit);
             randomChar = (char) randomInt;
             token.append(randomChar);
         }
         return token.toString();
     }
 
-    public static Integer getRandomIntWithinLimits(int min, int max) {
+    public static Integer getRandomInt(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
 }
