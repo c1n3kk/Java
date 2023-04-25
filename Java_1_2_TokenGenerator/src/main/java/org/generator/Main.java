@@ -10,14 +10,15 @@ public class Main {
         while (true) {
             System.out.println("\nPlease select the length of the token to generate:");
             System.out.println("(1 - 5 characters, 2 - 10 characters, 3 - 15 characters)");
+
             int tokenLength = 5 * getTokenLength();
             if (tokenLength == 0) {
-                continue;
-            } else {
-                String token = generateToken(tokenLength);
-                System.out.println("Your generated token is:");
-                System.out.println("\n" + token + "\n");
-            }
+                continue;}
+
+            String token = generateToken(tokenLength);
+            System.out.println("Your generated token is:");
+            System.out.println("\n" + token + "\n");
+
             System.out.println("Do you want to generate another token?");
             System.out.println("1 - yes, 2 - no");
             int nextAction = new Scanner(System.in).nextInt();
@@ -31,11 +32,9 @@ public class Main {
     public static Integer getTokenLength() {
         int userInt = new Scanner(System.in).nextInt();
         if (userInt == 1 || userInt == 2 || userInt == 3) {
-            return userInt;
-        } else {
-            System.out.println("Your value is not valid!");
-            return 0;
-        }
+            return userInt;}
+        System.out.println("Your value is not valid!");
+        return 0;
     }
 
     public static String generateToken(int tokenLength) {
